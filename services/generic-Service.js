@@ -7,7 +7,7 @@ class GenericsService {
   }
 
   async find(){
-    return data;
+    return '';
   }
 
   async findOne(id) {

@@ -1,4 +1,3 @@
-const { response } = require('express');
 const pool = require('./../libs/postgres-pool');
 
 class UsersService {
@@ -13,8 +12,8 @@ class UsersService {
 
   async find(){
     const query = 'Select * from task';
-    const response = await this.pool.query(query);
-    return response.rows;
+    const res = await this.pool.query(query);
+    return res.rows;
   }
 
   async findOne(id) {
