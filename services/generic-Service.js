@@ -14,8 +14,8 @@ class GenericsService {
     return { id };
   }
 
-  async update(id) {
-    return { id };
+  async update(id, changes) {
+    return { id, changes };
   }
   
   async delete(id) {

@@ -1,6 +1,15 @@
+
 function logErrors (error, req, res, next) {
   console.error(error);
   next(error);
+}
+
+
+function errorHandler (error, req, res, next) {
+  res.status(500).json({
+    message: error.message,
+    stack: error.stack,
+  })
 }
 
 function boomErrorHandler (error, req, res, next) {
@@ -12,12 +21,4 @@ function boomErrorHandler (error, req, res, next) {
   }
 }
 
-function errorHandler (error, req, res, next) {
-  res.status(500).json({
-    message: error.message,
-    stack: error.stack,
-  })
-}
-
-
-module.exports = { logErrors, errorHandler, boomErrorHandler };
+module.exports = { logErrors, errorHandler, boomErrorHandler};
