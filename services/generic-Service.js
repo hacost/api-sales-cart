@@ -2,18 +2,18 @@
 class GenericsService {
   constructor(){}
 
-  async create(data){
-    return data;
-  }
-
-  async find(){
+  async findAll(){
     return '';
   }
 
-  async findOne(id) {
+  async findById(id) {
     return { id };
   }
 
+  async create(data){
+    return data;
+  }
+  
   async update(id, changes) {
     return { id, changes };
   }

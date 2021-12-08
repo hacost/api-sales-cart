@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const routerApi = require('./routes/routerApi');
-const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middlewares/errorHandler');
+const routerApi = require('./routes/router-api');
+const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middleware/error-handler');
 const app = express();
 const port = process.env.PORT || 3000;
 const whiteList = ['http://127.0.0.1:5500','https://myapp.com'];
@@ -20,7 +20,7 @@ const options = {
     if (whiteList.includes(origin) || !origin) {
       callback(null, true);
     } else {
-      callback(new Error('Acceso no autorizado...'));
+      callback(new Error('Unauthorized access...'));
     } 
   }
 }

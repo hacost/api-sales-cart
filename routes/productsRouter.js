@@ -1,7 +1,7 @@
 const express = require('express');
 const ProductsService = require('./../services/productsService');
-const validatorHandler = require('./../middlewares/validatorHandler');
-const { createProductSchema, updateProductSchema, getProductSchema } = require('./../schemas/productsSchema');
+const validatorHandler = require('../middleware/validator-handler');
+const { createProductSchema, updateProductSchema, getProductSchema } = require('../validators/productsSchema');
 
 const router = express.Router();
 const productsService = new ProductsService();
@@ -59,7 +59,6 @@ router.patch('/:id',
   } catch (error) {
     next(error);
   }
-
 })
 
 // example to delete
@@ -74,7 +73,6 @@ router.delete('/:id', async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-
 })
 
 module.exports = router;
