@@ -1,7 +1,7 @@
 {
-  "name": "api-store",
+  "name": "sales-api",
   "version": "1.0.0",
-  "description": "Api with node js, express js, sequelize, that is so cool...",
+  "description": "Sales api with node js, express js, sequelize, that is so cool...",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
